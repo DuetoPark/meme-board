@@ -1,0 +1,92 @@
+/*
+* MOBILE-PROTRAIT(<568px)=================================
+* feature                   sm
+* columns                   4
+* margin                    8px
+* gutter                    10px
+* MOBILE-LANDSCAPE(>=568px)===============================
+* feature                   md
+* columns                   6
+* margin                    24px
+* gutter                    20px
+* TABLET(>=768px)=========================================
+* feature                   lg
+* columns                   8
+* margin                    48px
+* gutter                    20px
+* DESKTOP(>=1024px)=========================================
+* feature                   xl
+* columns                   12
+* margin                    auto
+* gutter                    20px
+* unit                      60px
+* max-container             960px
+*/
+
+$gutter: 20px;
+
+$sm-columns: 4;
+$sm-padding: 10px;
+
+$md-columns: 6;
+$md-padding: 24px;
+
+$lg-columns: 8;
+$lg-padding: 48px;
+
+$xl-columns: 12;
+$xl-padding: auto;
+$xl-max-container: 960px;
+
+.container {
+  width: 100%;
+  padding: 0 $sm-padding;
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -#{$gutter / 2};
+  }
+
+  [class^='col-'] {
+    padding: 0 $gutter / 2;
+  }
+
+  @for $i from 1 through $sm-columns {
+    .col-sm-#{$i} {
+      width: percentage($i / $sm-columns);
+    }
+  }
+
+  @include responsive(M) {
+    padding: 0 $md-padding;
+
+    @for $i from 1 through $md-columns {
+      .col-md-#{$i} {
+        width: percentage($i / $md-columns);
+      }
+    }
+  }
+
+  @include responsive(T) {
+    padding: 0 $lg-padding;
+
+    @for $i from 1 through $lg-columns {
+      .col-lg-#{$i} {
+        width: percentage($i / $lg-columns);
+      }
+    }
+  }
+
+  @include responsive(D) {
+    max-width: $xl-max-container;
+    padding: 0;
+
+    @for $i from 1 through $xl-columns {
+      .col-xl-#{$i} {
+        width: percentage($i / $xl-columns);
+      }
+    }
+  }
+}

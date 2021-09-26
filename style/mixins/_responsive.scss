@@ -11,14 +11,8 @@
     }
   }
 
-  @if ($screen == 'T-PRO') {
-    @media screen and (min-width: $lg-breakpoint) {
-      @content;
-    }
-  }
-
   @if ($screen == 'D') {
-    @media screen and (min-width: $xl-breakpoint) {
+    @media screen and (min-width: $lg-breakpoint) {
       @content;
     }
   }
