@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dueto park" />
+    <meta name="keywords" content="meme, 밈" />
+    <meta
+      name="description"
+      content="키보드를 누르면 유명한 밈의 오디오가 재생된다."
+    />
+
+    <title>Meme-board</title>
+    <!-- NOTE: Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- NOTE: Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <!-- NOTE: Style Sheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="key-group">
+      <h1 class="visually-hidden">밈보드 본문</h1>
+
+      <div class="top-floor">
+        <div class="key" data-key="81">
+          <kbd>Q</kbd>
+          <button type="button" class="key" data-key="81"></button>
+        </div>
+
+        <div class="key" data-key="87">
+          <kbd>W</kbd>
+          <button type="button" class="key" data-key="87"></button>
+        </div>
+
+        <div class="key" data-key="69">
+          <kbd>E</kbd>
+          <button type="button" class="key" data-key="69"></button>
+        </div>
+
+        <div class="key" data-key="82">
+          <kbd>R</kbd>
+          <button type="button" class="key" data-key="82"></button>
+        </div>
+
+        <div class="key" data-key="84">
+          <kbd>T</kbd>
+          <button type="button" class="key" data-key="84"></button>
+        </div>
+      </div>
+
+      <div class="middle-floor">
+        <div class="key" data-key="65">
+          <kbd>A</kbd>
+          <button type="button" class="key" data-key="65"></button>
+        </div>
+
+        <div class="key" data-key="83">
+          <kbd>S</kbd>
+          <button type="button" class="key" data-key="83"></button>
+        </div>
+
+        <div class="key" data-key="68">
+          <kbd>D</kbd>
+          <button type="button" class="key" data-key="68"></button>
+        </div>
+
+        <div class="key" data-key="70">
+          <kbd>F</kbd>
+          <button type="button" class="key" data-key="70"></button>
+        </div>
+
+        <div class="key" data-key="71">
+          <kbd>G</kbd>
+          <button type="button" class="key" data-key="71"></button>
+        </div>
+      </div>
+
+      <div class="bottom-floor">
+        <div class="key" data-key="90">
+          <kbd>Z</kbd>
+          <button type="button" class="key" data-key="90"></button>
+        </div>
+
+        <div class="key" data-key="88">
+          <kbd>X</kbd>
+          <button type="button" class="key" data-key="88"></button>
+        </div>
+
+        <div class="key" data-key="67">
+          <kbd>C</kbd>
+          <button type="button" class="key" data-key="67"></button>
+        </div>
+
+        <div class="key" data-key="86">
+          <kbd>V</kbd>
+          <button type="button" class="key" data-key="86"></button>
+        </div>
+
+        <div class="key" data-key="66">
+          <kbd>B</kbd>
+          <button type="button" class="key" data-key="66"></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="audio-group">
+      <audio src="./assets/AHHH.mp3" data-key="81"></audio>
+      <audio src="./assets/later_2000yrs.mp3" data-key="87"></audio>
+      <audio src="./assets/later_AFewMoments.mp3" data-key="69"></audio>
+      <audio src="./assets/later_6.5hours.mp3" data-key="82"></audio>
+      <audio src="./assets/later_2hours.mp3" data-key="84"></audio>
+      <audio src="./assets/later_5mins.mp3" data-key="65"></audio>
+      <audio src="./assets/NOOOOO.mp3" data-key="83"></audio>
+      <audio src="./assets/DAMMMM.mp3" data-key="68"></audio>
+      <audio src="./assets/HaHaHaHa.mp3" data-key="70"></audio>
+      <audio src="./assets/IWonder.mp3" data-key="71"></audio>
+      <audio src="./assets/NoGotPlease.mp3" data-key="90"></audio>
+      <audio src="./assets/OHHHH.mp3" data-key="88"></audio>
+      <audio src="./assets/SupriseMF.mp3" data-key="67"></audio>
+      <audio src="./assets/Trumpet.mp3" data-key="86"></audio>
+      <audio src="./assets/WhyAreURunning.mp3" data-key="66"></audio>
+    </div>
+
+    <script src="./js/_play-audio.js"></script>
+  </body>
+</html>
