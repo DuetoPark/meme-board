@@ -21,3 +21,15 @@
     width: $key-size-lg-x20 + $key-margin-md * 2;
   }
 }
+
+.function-space {
+  width: $key-size-sm * 7 - $key-margin-sm * 8;
+
+  @include responsive(T) {
+    width: $key-size-md * 7 - $key-margin-md * 4;
+  }
+
+  @include responsive(D) {
+    width: $key-size-lg * 7 - $key-margin-md * 6;
+  }
+}

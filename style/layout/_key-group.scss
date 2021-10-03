@@ -1,8 +1,12 @@
 .key-group {
+  @include flexbox;
+  height: 100vh;
+
   &-1st,
   &-2nd,
   &-3rd,
-  &-4th {
+  &-4th,
+  &-5th {
     @include flexbox;
   }
 
@@ -21,6 +25,14 @@
   @include responsive(T) {
     .key {
       margin: 4px;
+    }
+  }
+
+  @include responsive(D) {
+    .key-group-5th {
+      .key {
+        @include text-style(24, $dark);
+      }
     }
   }
 }
