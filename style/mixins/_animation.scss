@@ -1,0 +1,26 @@
+@keyframes round {
+  0% {
+    transform: rotate(0);
+  }
+
+  90% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin animation-round() {
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-name: round;
+  animation-timing-function: ease-out;
+}
+
+@mixin animation($name) {
+  @if ($name == 'round') {
+    @include animation-round;
+  }
+}
