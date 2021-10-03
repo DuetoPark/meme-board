@@ -22,9 +22,31 @@
     }
   }
 
+  .desc {
+    display: none;
+
+    &.is-active {
+      @include pos-center-x;
+      @include animation-slideIn(top);
+      @include text-style(16, $dark);
+      top: 0;
+      display: block;
+      padding: 10px 40px;
+      font-family: 'UhBeeSeulvely';
+      background-color: $background;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
   @include responsive(T) {
     .key {
       margin: 4px;
+    }
+
+    .desc {
+      &.is-active {
+        @include text-style(18, $dark);
+      }
     }
   }
 
@@ -32,6 +54,13 @@
     .key-group-5th {
       .key {
         @include text-style(24, $dark);
+      }
+    }
+
+    .desc {
+      &.is-active {
+        @include text-style(24, $dark);
+        padding: 20px 60px;
       }
     }
   }
