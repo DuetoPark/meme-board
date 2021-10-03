@@ -4,7 +4,7 @@ let lastDesc = '';
 const keyDivs = document.querySelectorAll('div.key');
 const keyButtons = document.querySelectorAll('div.key button');
 
-function removeClass(wrapper, audio) {
+function removeClass(wrapper, audio, desc) {
   const audioDuration = audio.duration * 1000;
 
   window.setTimeout(() => {
@@ -29,7 +29,10 @@ function playHandler(e) {
   const wrapper = document.querySelector(`div[data-key='${keyCode}']`);
   const desc = document.querySelector(`.desc[data-key='${keyCode}']`);
 
-  e.preventDefault();
+  if (keyCode == 9) {
+    e.preventDefault();
+  }
+
   if (!audio) return;
 
   // NOTE: When currentAudio is playing, pause LastAudio.
@@ -41,12 +44,7 @@ function playHandler(e) {
 
   addClass(wrapper, desc);
   playAudio(audio);
-  removeClass(wrapper, audio);
-
-  const audioDuration = audio.duration * 1000;
-  window.setTimeout(() => {
-    desc.classList.remove('is-active');
-  }, audioDuration);
+  removeClass(wrapper, audio, desc);
 
   lastWrapper = wrapper;
   lastAudio = audio;
