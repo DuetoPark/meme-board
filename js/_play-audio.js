@@ -1,6 +1,6 @@
 let lastAudio = '';
-const keyButtons = document.querySelectorAll('button.key');
 const keyDivs = document.querySelectorAll('div.key');
+const keyButtons = document.querySelectorAll('div.key button');
 
 function addClass(wrapper) {
   wrapper.classList.add('is-playing');
