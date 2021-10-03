@@ -1,28 +1,29 @@
+.guide {
+  @include flexbox;
+  @include text-style(18, $primary);
+  height: 100vh;
+  font-family: $font-family;
+  text-align: center;
+
+  &-portrait {
+    @include animation-round;
+  }
+
+  p {
+    margin-bottom: 8px;
+    word-break: keep-all;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 // NOTE: 세로모드
 @media (orientation: portrait) {
   .guide {
-    @include flexbox;
-    @include text-style(18, $primary);
-    height: 100vh;
-    font-family: $font-family;
-    text-align: center;
-
-    &-wrapper {
-      @include animation-round;
-    }
-
-    p {
-      margin-bottom: 8px;
-      word-break: keep-all;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .highlight {
-      display: inline-block;
-      color: $green;
+    &-portrait {
+      display: block;
     }
   }
 
@@ -34,7 +35,11 @@
 // NOTE: 가로모드
 @media (orientation: landscape) {
   .guide {
-    display: none;
+    height: auto;
+
+    &-portrait {
+      display: none;
+    }
   }
 
   .key-group {
