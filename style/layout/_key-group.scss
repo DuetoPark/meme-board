@@ -24,6 +24,7 @@
 
   .desc {
     display: none;
+    white-space: nowrap;
 
     &.is-active {
       @include pos-center-x;
@@ -36,6 +37,12 @@
       background-color: $background;
       border-radius: 0 0 8px 8px;
     }
+  }
+
+  &-usage-method {
+    @include text-style(16, $primary);
+    padding: 10px 40px;
+    text-align: center;
   }
 
   @include responsive(T) {
