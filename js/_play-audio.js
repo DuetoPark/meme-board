@@ -1,9 +1,21 @@
+let lastWrapper = '';
 let lastAudio = '';
+let lastDesc = '';
 const keyDivs = document.querySelectorAll('div.key');
 const keyButtons = document.querySelectorAll('div.key button');
 
-function addClass(wrapper) {
+function removeClass(wrapper, audio) {
+  const audioDuration = audio.duration * 1000;
+
+  window.setTimeout(() => {
+    wrapper.classList.remove('is-playing');
+    desc.classList.remove('is-active');
+  }, audioDuration);
+}
+
+function addClass(wrapper, desc) {
   wrapper.classList.add('is-playing');
+  desc.classList.add('is-active');
 }
 
 function playAudio(nowPlaying) {
@@ -15,26 +27,31 @@ function playHandler(e) {
   const keyCode = e.keyCode ? e.keyCode : e.currentTarget.dataset.key;
   const audio = document.querySelector(`audio[data-key='${keyCode}']`);
   const wrapper = document.querySelector(`div[data-key='${keyCode}']`);
+  const desc = document.querySelector(`.desc[data-key='${keyCode}']`);
 
+  e.preventDefault();
   if (!audio) return;
 
   // NOTE: When currentAudio is playing, pause LastAudio.
   if (lastAudio && audio != lastAudio && !lastAudio.ended) {
     lastAudio.pause();
+    lastWrapper.classList.remove('is-playing');
+    lastDesc.classList.remove('is-active');
   }
 
-  addClass(wrapper);
+  addClass(wrapper, desc);
   playAudio(audio);
+  removeClass(wrapper, audio);
 
+  const audioDuration = audio.duration * 1000;
+  window.setTimeout(() => {
+    desc.classList.remove('is-active');
+  }, audioDuration);
+
+  lastWrapper = wrapper;
   lastAudio = audio;
-}
-
-function removeClassHandler(e) {
-  e.currentTarget.classList.remove('is-playing');
+  lastDesc = desc;
 }
 
 window.addEventListener('keydown', playHandler);
 keyButtons.forEach((button) => button.addEventListener('click', playHandler));
-keyDivs.forEach((div) =>
-  div.addEventListener('transitionend', removeClassHandler)
-);
