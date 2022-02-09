@@ -1,0 +1,66 @@
+.meme-board {
+  position: relative;
+
+  .meme-board-header {
+    @include pos-center-x;
+    @include flexbox(between);
+    top: 16px;
+    z-index: $meme-board-header-level;
+    width: 100%;
+
+    button {
+      width: $button-size-sm;
+      height: $button-size-sm;
+      font-size: 26px;
+    }
+  }
+
+  .meme-board-field {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - #{$footer-height-sm});
+
+    .placeholder {
+      @include pos-center;
+      @include text-style(16, $black);
+      text-align: right;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 150ms ease-in-out;
+
+      &.is-active {
+        opacity: 0.4;
+        visibility: visible;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    .meme-board-header {
+      @include inline-flexbox();
+      top: 32px;
+      right: 0;
+      left: auto;
+      flex-direction: column;
+      width: $button-size-md;
+
+      button {
+        width: $button-size-md;
+        height: $button-size-md;
+
+        &.is-pause {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .meme-board-field {
+      height: calc(100vh - #{$footer-height-md});
+
+      .placeholder {
+        @include text-style(18);
+      }
+    }
+  }
+}
