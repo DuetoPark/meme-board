@@ -23,5 +23,115 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body></body>
+  <body>
+    <section class="meme-board-cover is-active">
+      <header class="logo">
+        <h1 lang="en">MEME BOARD</h1>
+        <i aria-hidden="true">☔️ ☔️ ☔️</i>
+      </header>
+
+      <button class="btn-36 btn-primary start-button" type="button">
+        시작하기
+        <i aria-hidden="true">😎</i>
+      </button>
+    </section>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <section class="meme-board">
+              <header class="meme-board-header">
+                <h1 class="visually-hidden">밈 보드</h1>
+
+                <button
+                  class="btn-outlined is-pause"
+                  type="button"
+                  aria-label="밈 멈추기"
+                >
+                  <i aria-hidden="true">🤫</i>
+                </button>
+
+                <button
+                  class="btn-outlined is-list"
+                  type="button"
+                  aria-label="밈 오디오 목록 열기"
+                >
+                  <i aria-hidden="true">💿</i>
+                </button>
+              </header>
+
+              <div class="meme-board-field">
+                <!-- NOTE: 필드에 아무것도 없을 경우 -->
+                <p class="placeholder is-active">
+                  아무 키를 누르면, 밈 비가 내린다 <br />
+                  -마법사 🪄
+                </p>
+
+                <!-- NOTE: 밈 글씨가 쌓인 경우 -->
+                <!-- <button
+                  class="btn-36 btn-ghost meme-button"
+                  type="button"
+                  data-title="제목"
+                >
+                  <strong>제목</strong>
+                </button>
+                <button
+                  class="btn-36 btn-ghost meme-button"
+                  type="button"
+                  data-title="제목"
+                >
+                  <strong>제목</strong>
+                </button> -->
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="meme-board-footer">
+      <dl class="meme-detail is-active">
+        <div class="meme-detail-title">
+          <dt class="visually-hidden">제목</dt>
+          <!-- NOTE: 제목 길이가 긴 경우 -->
+          <dd>제목 asdfasdfdfasdfasdfasdfasdfdsfassdfafasdf</dd>
+        </div>
+        <div class="meme-detail-reference">
+          <dt class="visually-hidden">출처</dt>
+          <dd>출처</dd>
+        </div>
+      </dl>
+    </footer>
+
+    <aside class="meme-list-modal">
+      <header>
+        <h1>밈 오디오 목록</h1>
+      </header>
+
+      <ul class="meme-audio-list">
+        <li class="meme-audio-item">
+          <button
+            class="btn-36 btn-secondary meme-button"
+            type="button"
+            data-title="제목"
+          >
+            제목
+          </button>
+        </li>
+        <!-- NOTE: 제목 길이가  긴 경우 -->
+        <li class="meme-audio-item">
+          <button
+            class="btn-36 btn-secondary meme-button"
+            type="button"
+            data-title="제목"
+          >
+            제목 dfadfsdfafdsafsdafdafdfdafdaffsafsasfdfadsdfa
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="overlay"></div>
+  </body>
 </html>
