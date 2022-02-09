@@ -1,28 +1,3 @@
-/*
-* MOBILE-PROTRAIT(<568px)=================================
-* feature                   sm
-* columns                   4
-* margin                    8px
-* gutter                    10px
-* MOBILE-LANDSCAPE(>=568px)===============================
-* feature                   md
-* columns                   6
-* margin                    24px
-* gutter                    20px
-* TABLET(>=768px)=========================================
-* feature                   lg
-* columns                   8
-* margin                    48px
-* gutter                    20px
-* DESKTOP(>=1024px)=========================================
-* feature                   xl
-* columns                   12
-* margin                    auto
-* gutter                    20px
-* unit                      60px
-* max-container             960px
-*/
-
 $gutter: 20px;
 
 $sm-columns: 4;
