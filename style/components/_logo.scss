@@ -1,0 +1,44 @@
+.logo {
+  padding: 16px 24px;
+  text-align: center;
+  background-color: $white;
+  border: 2px solid $black;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px $white;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-name: bingle-bingle;
+  animation-timing-function: ease-in;
+
+  h1 {
+    @include text-style(24, $black);
+    margin-bottom: 4px;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+  @include responsive(D) {
+    padding: 24px 40px;
+
+    h1 {
+      @include text-style(36);
+      margin-bottom: 8px;
+    }
+
+    i {
+      font-size: 24px;
+    }
+  }
+}
+
+@keyframes bingle-bingle {
+  0% {
+    transform: rotate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
