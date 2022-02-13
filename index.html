@@ -22,6 +22,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./js/start-button.js" defer></script>
   </head>
   <body>
     <section class="meme-board-cover is-active">
@@ -59,30 +60,21 @@
                 >
                   <i aria-hidden="true">💿</i>
                 </button>
+
+                <button
+                  class="btn-outlined is-clear"
+                  type="button"
+                  aria-label="화면 청소"
+                >
+                  <i aria-hidden="true">🗑</i>
+                </button>
               </header>
 
               <div class="meme-board-field">
-                <!-- NOTE: 필드에 아무것도 없을 경우 -->
                 <p class="placeholder is-active">
                   아무 키를 누르면, 밈 비가 내린다 <br />
                   -마법사 🪄
                 </p>
-
-                <!-- NOTE: 밈 글씨가 쌓인 경우 -->
-                <!-- <button
-                  class="btn-36 btn-ghost meme-button"
-                  type="button"
-                  data-title="제목"
-                >
-                  <strong>제목</strong>
-                </button>
-                <button
-                  class="btn-36 btn-ghost meme-button"
-                  type="button"
-                  data-title="제목"
-                >
-                  <strong>제목</strong>
-                </button> -->
               </div>
             </section>
           </div>
@@ -91,15 +83,14 @@
     </main>
 
     <footer class="meme-board-footer">
-      <dl class="meme-detail is-active">
+      <dl class="meme-detail">
         <div class="meme-detail-title">
           <dt class="visually-hidden">제목</dt>
-          <!-- NOTE: 제목 길이가 긴 경우 -->
-          <dd>제목 asdfasdfdfasdfasdfasdfasdfdsfassdfafasdf</dd>
+          <dd></dd>
         </div>
         <div class="meme-detail-reference">
           <dt class="visually-hidden">출처</dt>
-          <dd>출처</dd>
+          <dd></dd>
         </div>
       </dl>
     </footer>
@@ -107,31 +98,16 @@
     <aside class="meme-list-modal">
       <header>
         <h1>밈 오디오 목록</h1>
+        <button
+          class="btn-36 btn-ghost close-button"
+          type="button"
+          aria-label="창 닫기"
+        >
+          <i aria-hidden="true">x</i>
+        </button>
       </header>
 
-      <ul class="meme-audio-list">
-        <li class="meme-audio-item">
-          <button
-            class="btn-36 btn-secondary meme-button"
-            type="button"
-            data-title="제목"
-          >
-            <strong> 제목 </strong>
-          </button>
-        </li>
-        <!-- NOTE: 제목 길이가  긴 경우 -->
-        <li class="meme-audio-item">
-          <button
-            class="btn-36 btn-secondary meme-button"
-            type="button"
-            data-title="제목"
-          >
-            <strong>
-              제목 dfadfsdfafdsafsdafdafdfdafdaffsafsasfdfadsdfa
-            </strong>
-          </button>
-        </li>
-      </ul>
+      <ul class="meme-audio-list"></ul>
     </aside>
 
     <div class="overlay"></div>
