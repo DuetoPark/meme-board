@@ -34,6 +34,10 @@
         visibility: visible;
       }
     }
+
+    button > strong {
+      pointer-events: none;
+    }
   }
 
   @include responsive(T) {
